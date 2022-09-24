@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto Slab');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+:root {
+    --light-beige: #FFF1E6; /* var(--light-beige) */
+    --dark-beige: #F4AD6E; /* var(--dark-beige) */
+    --orange: #F28524; /* var(--orange) */
+    --red-orange: #DB5516; /* var(--red-orange) */
+}
+
+a:link { color: var(--red-orange); text-decoration: none; }
+a:visited { color: var(--red-orange); text-decoration: none; }
+a:active { color: var(--red-orange); text-decoration: none; }
+a:hover { color: var(--red-orange); text-decoration: underline; }
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Slab', sans-serif;
+}
+
+h1, h2, h3 {
+    position: relative;
+    z-index: 1;
+    padding-top: 5px;
+}
+h1:before, h2:before, h3:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 1px;
+    width: 30px;
+    border-top: 3px solid var(--red-orange);
+}
+
+hr {
+    /*border: 1px solid var(--red-orange);
+    background-color: var(--red-orange);*/
+    border: 1px solid black;
+    background-color: black;
+}
+
+/* Style to change separator  */
+.breadcrumb-item + .breadcrumb-item::before {
+    font-family: 'Bootstrap-Icons';
+    content: "\F138";
+}
+
+.breadcrumb {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+body {
+    background-color: var(--light-beige);
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar-brand {
+    font-family: 'Roboto Slab', sans-serif;
+}
+
+.not-link-like-header {
+    color: var(--light-beige) !important;
+}
+
+#language-flag {
+    font-size: 14px;
+    padding-right: 10px;
+}
+
+#language-flag a:link, #language-flag a:visited, #language-flag a:active {
+    color: var(--light-beige);
+}
+
+#page-content a:link, #page-content a:visited, #page-content a:active {
+    color: var(--red-orange) !important;
+    text-decoration: none;
+}
+
+#page-content a:hover {
+    text-decoration: underline;
+}
+
+.navbar {
+    background-color: var(--red-orange);
+}
+
+.navbar-brand:hover {
+    text-decoration: none;
+}
+
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+#page-content {
+    padding-bottom: 144px; /* Footer height + 15px */
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 129px;
+    color: var(--light-beige);
+}
+
+#footer a:link, #footer a:visited, #footer a:active {
+    color: var(--light-beige);
+    text-decoration: underline;
+}
+
+#footer a:hover {
+    text-decoration: none;
+}
+
+.footer-1 {
+    background: linear-gradient(to right, var(--red-orange), var(--dark-beige));
+    margin-bottom: 0;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.footer-2 {
+    background-color: #000000;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.navbar .btn {
+    border-radius: 15px;
+}
+
+.btn, .alert {
+    border-radius: 0;
+}
+
+#logout .btn-light {
+    background-color: var(--red-orange);
+    border-color: var(--light-beige);
+}
+
+#logout a:link, a:visited, a:active {
+    color: var(--light-beige) !important;
+}
+
+#logout a:hover {
+    background-color: var(--light-beige) !important;
+    color: var(--red-orange) !important;
+    text-decoration: none;
+}

@@ -1,0 +1,35 @@
+a:link { color: #ff7f00; text-decoration: none; }
+a:visited { color: #ff7f00; text-decoration: none; }
+a:active { color: #ff7f00; text-decoration: none; }
+a:hover { color: #ff7f00; text-decoration: none; }
+
+.link-like {
+    color: #ff7f00;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Style to change separator  */
+.breadcrumb-item + .breadcrumb-item::before {
+    font-family: 'Bootstrap-Icons';
+    content: "\F138";
+}
+
+.breadcrumb {
+    padding: 12px 16px;
+    border-radius: 5px;
+    background-color: #E9ECEF;
+    /*font-size: small;*/
+}
+
+.bg-rosenheim {
+    background: #ff7f00;
+}
+
+.text-rosenheim {
+    color: #ff7f00;
+}
+
+#design-switch {
+    padding-right: 5px;
+}

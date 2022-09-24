@@ -1,0 +1,94 @@
+.link-not-allowed {
+    color: darkgray;
+    text-decoration: none;
+    cursor: not-allowed;
+}
+
+.not-link-like {
+    color: black !important;
+}
+
+.header-line {
+    height: 50px;
+    line-height: 50px;
+    vertical-align: middle;
+    border-bottom: 1px solid #ddd;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    background: rgb(248,248,255);
+    background: rgba(248,248,255,0.88);
+}
+
+.dropdown-menu {
+    z-index: 1;
+}
+
+[data-toggle="collapse"] .fas:before {
+    content: "\f0d7";
+}
+
+[data-toggle="collapse"].collapsed .fas:before {
+    content: "\f0da";
+}
+
+button:disabled {
+    cursor: not-allowed;
+}
+
+/* No break */
+.nobr {
+    white-space: nowrap;
+}
+
+/* No arrows in input field of type number if class is used */
+.no-arrows::-webkit-inner-spin-button,
+.no-arrows::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+/* Tooltip to use in a livewire component --- start ---  */
+.tooltip-livewire {
+    position: relative;
+    display: inline-block;
+    /*border-bottom: 1px dotted black;*/
+}
+
+/* Width and margin-left have to set in the view - margin-left has to be the half negativ value of the width */
+.tooltip-livewire .tooltiptext {
+    visibility: hidden;
+    /*width: 120px;*/
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    /*padding: 5px 0;*/
+    padding: 5px 2px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    /*margin-left: -60px;*/
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: small;
+}
+
+.tooltip-livewire .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip-livewire:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+/* Tooltip to use in a livewire component --- end ---  */
