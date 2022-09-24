@@ -99,6 +99,7 @@ class icon extends Component
             'check'         => '<i class="bi bi-check"></i>',
             'cross'         => '<i class="bi bi-x"></i>',
             'clear'         => '<i class="bi bi-eraser-fill"></i>',
+            'login'         => '<i class="bi bi-door-open-fill"></i>',
         };
 
         if ($this->size != null) {

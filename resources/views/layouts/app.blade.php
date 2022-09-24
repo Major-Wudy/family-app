@@ -48,7 +48,7 @@
 <div id="page-container">
     <nav class="navbar navbar-expand-sm header-line mb-2">
         <div id="content" class="container">
-            <a class="navbar-brand" href="{{ route('overview') }}">
+            <a class="navbar-brand" href="{{ route('home') }}">
                 @if(Config::get('features.new_design') && Cookie::get(env('APP_NAME') . '_design') != 1)
                     @php $logo = asset('/img/logo_trans.png') @endphp
                 @else

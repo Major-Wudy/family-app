@@ -12,14 +12,26 @@ use Diglactic\Breadcrumbs\Generator as BreadcrumbTrail;
  */
 
 // Overview
-Breadcrumbs::for('overview', function (BreadcrumbTrail $trail) {
-    $trail->push(__('breadcrumbs.overview'), route('overview'));
+Breadcrumbs::for('home', function (BreadcrumbTrail $trail) {
+    $trail->push(__('breadcrumbs.home'), route('home'));
 });
 
 // Overview > Test
 Breadcrumbs::for('test', function (BreadcrumbTrail $trail) {
-    $trail->parent('overview');
+    $trail->parent('home');
     $trail->push('Test', route('test'));
+});
+
+// Overview > Login
+Breadcrumbs::for('login', function (BreadcrumbTrail $trail) {
+    $trail->parent('home');
+    $trail->push('Login', route('login'));
+});
+
+// Overview > Register
+Breadcrumbs::for('register', function (BreadcrumbTrail $trail) {
+    $trail->parent('home');
+    $trail->push('Register', route('register'));
 });
 
 /**

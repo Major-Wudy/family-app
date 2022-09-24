@@ -6,8 +6,4 @@
 
     @lang('overview.test-text')
 
-    <br><br>
-
-    @lang('overview.test-link'): <a href="{{ route('test') }}">{{ route('test') }}</a>
-
 @endsection

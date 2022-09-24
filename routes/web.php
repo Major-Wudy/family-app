@@ -14,12 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 // #### Overview ####
-Route::get('/', [App\Http\Controllers\OverviewController::class, 'index'])->name('overview');
+Route::get('/', [App\Http\Controllers\OverviewController::class, 'index'])->name('home');
 
-// #### Test ####
-Route::view('/test', 'test')->name('test');
-
-
+// Login
+Route::get('/login', [App\Http\Controllers\LoginController::class, 'index'])->name('login');
+Route::get('/register', [App\Http\Controllers\RegisterController::class, 'index'])->name('register');
 
 /*
  * Routs below relate to template features
