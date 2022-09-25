@@ -22,6 +22,13 @@ Route::get('/login/user', [App\Http\Controllers\LoginController::class, 'login']
 Route::get('/logout', [App\Http\Controllers\LoginController::class, 'logout'])->name('logout');
 Route::get('/register', [App\Http\Controllers\RegisterController::class, 'index'])->name('register');
 
+Route::middleware('hasRole:mom,dad,uncle')->get('/area/member', function() {
+    return view('home');
+})->name('member-area');
+Route::middleware('hasRole:admin')->get('/area/admin', function() {
+    return view('home');
+})->name('admin-area');
+
 /*
  * Routs below relate to template features
  */

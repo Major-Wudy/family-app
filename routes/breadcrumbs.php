@@ -34,6 +34,18 @@ Breadcrumbs::for('register', function (BreadcrumbTrail $trail) {
     $trail->push('Register', route('register'));
 });
 
+// Home > Area > Member
+Breadcrumbs::for('member-area', function (BreadcrumbTrail $trail) {
+    $trail->parent('home');
+    $trail->push('Member-area', route('member-area'));
+});
+
+// Home > Area > Member
+Breadcrumbs::for('admin-area', function (BreadcrumbTrail $trail) {
+    $trail->parent('home');
+    $trail->push('Admin-area', route('admin-area'));
+});
+
 /**
  * Further examples:
  */

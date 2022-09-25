@@ -21,4 +21,8 @@ class User extends Model
         'forename',
         'surname',
     ];
+
+    public function roles() {
+        return $this->hasMany(Roles::class, 'user_id');
+    }
 }
