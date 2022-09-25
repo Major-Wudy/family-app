@@ -32,9 +32,14 @@ class LoginService
      * @return Boolean true on success else false
      */
     public static function logout() {
-        $user = User::where('username', Session::get('username'))->first();
-        $user->update(['token' => null]);
-        Session::flush();
-        return true;
+        if(Session::get('username') !== null) {
+
+            $user = User::where('username', Session::get('username'))->first();
+            $user->update(['token' => null]);
+            Session::flush();
+            return true;
+        } else {
+            return false;
+        }
     }
 }

@@ -88,7 +88,7 @@
                     </span>
                 @endif
                 {{-- Logout button --}}
-                @if(Config::get('features.logout_button'))
+                @if(Config::get('features.logout_button') && Session::get('username') !== null)
                     <span id="logout">
                         <a href="{{ route('logout') }}" class="btn btn-sm btn-light not-link-like"><x-icon type="logout"/> @lang('general.logout')</a>
                     </span>
