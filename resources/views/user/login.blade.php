@@ -40,7 +40,6 @@
                 $('#password')[0].type = 'password';
                 $('#show_pw')[0].textContent = 'Passwort anzeigen';
             }
-            
         }
     </script>
 @endsection

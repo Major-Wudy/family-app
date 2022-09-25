@@ -3,7 +3,7 @@
 return [
     // Layout
     'main-title' => 'Family App',
-    'logout' => 'Logout',
+    'logout' => 'Abmelden',
     'support-note' => 'Für technische Unterstützung wenden Sie sich bitte per E-Mail an <a href="mailto::email">:email</a>.',
     'gendering-note' => 'Aus Gründen der besseren Lesbarkeit wird auf die gleichzeitige Verwendung der Sprachformen männlich, weiblich und divers (m/w/d) verzichtet.<br>Sämtliche Personenbezeichnungen gelten gleichermaßen für alle Geschlechter.',
     'copyright' => '&copy; Copyright :date Raphael Wudy & Familie.',

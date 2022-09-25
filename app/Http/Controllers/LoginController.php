@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Services\LoginService;
 use Illuminate\Http\Request;
 
 class LoginController extends Controller
@@ -17,68 +18,29 @@ class LoginController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
+     * @author Raphael Wudy (raphael.wudy94@web.de) alias Major-Wudy
+     * 
+     * Log user in
+     * @param Array $credentials
+     * 
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public static function login($credentials) {
+        LoginService::login($credentials);
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
+     * @author Raphael Wudy (raphae.wudy94@web.de) alias Major-Wudy
+     * 
+     * Log user out
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+    public static function logout() {
+        $logged_out = LoginService::logout();
+        if(!$logged_out) {
+            return redirect()->route('home')->with('error', __('login.logout-error'));
+        } else {
+            return redirect()->route('home')->with('success', __('login.logout-success'));  
+        }
     }
 }

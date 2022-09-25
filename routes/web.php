@@ -18,6 +18,7 @@ Route::get('/', [App\Http\Controllers\OverviewController::class, 'index'])->name
 
 // Login
 Route::get('/login', [App\Http\Controllers\LoginController::class, 'index'])->name('login');
+Route::get('/logout', [App\Http\Controllers\LoginController::class, 'logout'])->name('logout');
 Route::get('/register', [App\Http\Controllers\RegisterController::class, 'index'])->name('register');
 
 /*

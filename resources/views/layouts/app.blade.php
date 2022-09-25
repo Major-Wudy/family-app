@@ -90,7 +90,7 @@
                 {{-- Logout button --}}
                 @if(Config::get('features.logout_button'))
                     <span id="logout">
-                        <a href="{{ ShibbolethHelper::logoutURL() }}" class="btn btn-sm btn-light not-link-like"><x-icon type="logout"/> @lang('general.logout')</a>
+                        <a href="{{ route('logout') }}" class="btn btn-sm btn-light not-link-like"><x-icon type="logout"/> @lang('general.logout')</a>
                     </span>
                 @endif
             </div>
@@ -102,7 +102,9 @@
         {{-- If javascript is disabled --}}
         <noscript>
             <div class="container">
-                {!! HtmlHelper::alert('danger', __('errors.no-javascript')) !!}
+                <div class="alert alert-danger">
+                    {!! __('errors.no-javascript') !!}
+                </div>
             </div>
         </noscript>
 

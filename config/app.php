@@ -192,11 +192,10 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // Custom
-        'ShibbolethHelper' => App\Helpers\Miscellaneous\ShibbolethHelper::class, // @author wero873
+        'LoginService' => App\Http\Services\LoginService::class, // @author Major-Wudy
         'StringHelper' => App\Helpers\Miscellaneous\StringHelper::class, // @author wero873
         'CookieHelper' => App\Helpers\Miscellaneous\CookieHelper::class, // @author wero873
         'FlagHelper' => App\Helpers\View\FlagHelper::class, // @author wero873
-        'HtmlHelper' => App\Helpers\View\HtmlHelper::class, // @author wero873
     ])->toArray(),
 
 ];
