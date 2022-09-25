@@ -18,4 +18,6 @@
 
     @lang('overview.test-text')
 
+    {{ Session::get('username') }}
+
 @endsection

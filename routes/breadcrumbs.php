@@ -16,10 +16,10 @@ Breadcrumbs::for('home', function (BreadcrumbTrail $trail) {
     $trail->push(__('breadcrumbs.home'), route('home'));
 });
 
-// Overview > Test
-Breadcrumbs::for('test', function (BreadcrumbTrail $trail) {
+// Overview > Login
+Breadcrumbs::for('index-login', function (BreadcrumbTrail $trail) {
     $trail->parent('home');
-    $trail->push('Test', route('test'));
+    $trail->push('Login', route('index-login'));
 });
 
 // Overview > Login

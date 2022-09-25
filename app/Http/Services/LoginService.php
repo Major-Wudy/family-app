@@ -2,7 +2,8 @@
 
 namespace App\Http\Services;
 
-use Throwable;
+use App\Models\User;
+use Illuminate\Support\Facades\Session;
 
 class LoginService 
 {
@@ -15,10 +16,12 @@ class LoginService
      * @return Boolean true on success else false
      */
     public static function login($credentials) {
-        try {
-            return redirect()->route('home');
-        } catch(Throwable $e) {
-            return redirect()->route('login')->with('error', __('login.login-error'));
+        
+        if (AuthService::login($credentials)) {
+            Session::put('username', $credentials['username']);
+            return true;
+        } else {
+            return false;
         }
     }
 
@@ -29,10 +32,9 @@ class LoginService
      * @return Boolean true on success else false
      */
     public static function logout() {
-        try {
-            return true;
-        } catch(Throwable $e) {
-            return false;
-        }
+        $user = User::where('username', Session::get('username'))->first();
+        $user->update(['token' => null]);
+        Session::flush();
+        return true;
     }
 }

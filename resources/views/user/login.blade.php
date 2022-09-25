@@ -2,6 +2,19 @@
 @section('title', __('login.title'))
 @section('content')
 
+@if (Session::has('error'))
+<div class="alert alert-danger text-center">
+    {{ Session::get('error') }}
+</div>
+@endif
+
+@if (Session::has('success'))
+<div class="alert alert-success text-center">
+    {{ Session::get('success') }}
+</div>
+@endif
+
+<form action="{{ route('login') }}" method="GET">
     <div class="row">
         <div class="col">
             <div class="row justify-content-center">
@@ -10,11 +23,11 @@
                         <x-icon type="login" :size="64"/>
                     </div>
                     <div class="form-floating">
-                        <input id="username" class="form-control col" type="text" value="" placeholder="@lang('login.placeholder-user')">
+                        <input id="username" name="username" class="form-control col" type="text" value="" placeholder="@lang('login.placeholder-user')">
                         <label for="username" >@lang('login.placeholder-user'):</label>
                     </div>
                     <div class="form-floating mt-2">
-                        <input id="password" class="form-control" type="password" value="" placeholder="@lang('login.placeholder-password')">
+                        <input id="password" name="password" class="form-control" type="password" value="" placeholder="@lang('login.placeholder-password')">
                         <label for="password">@lang('login.placeholder-password'):</label>
                     </div>
                     <div class="input-group mb-4 text-end">
@@ -30,7 +43,8 @@
             </div>
         </div>
     </div>
-
+</form>
+    
     <script>
         function pw_visible() {
             if($('#password')[0].type == 'password') {

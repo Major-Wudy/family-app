@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Services\LoginService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -25,8 +26,19 @@ class LoginController extends Controller
      * 
      * @return \Illuminate\Http\Response
      */
-    public static function login($credentials) {
-        LoginService::login($credentials);
+    public static function login(Request $request) {
+
+        $request->validate([
+            'username' => 'required',
+            'password' => 'required',
+        ]);
+        $credentials = $request->only('username', 'password');
+        if (LoginService::login($credentials)) {
+            $request->session()->regenerate();
+            return redirect()->intended('/');
+        } else {
+            return redirect()->route('index-login')->with('error', __('login.login-error'));
+        }
     }
 
     /**
