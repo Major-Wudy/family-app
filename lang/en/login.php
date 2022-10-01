@@ -11,4 +11,5 @@ return [
     'logout-error' => 'Ops. Something went wrong. Login failed. Please try again.',
     'logout-success' => 'Logout successful',
     'login-success' => 'Login successful',
+    'register' => 'sign up',
 ];

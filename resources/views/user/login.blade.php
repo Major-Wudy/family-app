@@ -31,13 +31,14 @@
                         <label for="password">@lang('login.placeholder-password'):</label>
                     </div>
                     <div class="input-group mb-4 text-end">
-                        <button id="show_pw" class="btn btn-link text-dark" onclick="pw_visible()">@lang('login.show-pw')</button>
+                        <a id="show_pw" class="btn btn-link text-dark" onclick="pw_visible()">@lang('login.show-pw')</a>
                     </div>
                     <div class="input-group mt-4 d-grid gap-4">
                         <button class="btn btn-success" type="submit"><x-icon type="send"/>@lang('login.submit')</button>
                     </div>
                     <div class="form-group text-center">
-                        <a href="{{ route('register') }}">@lang('login.forgot-pw')</a>
+                        <a href="{{ route('forgot-pw') }}">@lang('login.forgot-pw')</a>
+                        <a href="{{ route('register') }}">@lang('login.register')</a>
                     </div>
                 </div>
             </div>

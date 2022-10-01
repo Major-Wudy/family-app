@@ -16,11 +16,15 @@ use Illuminate\Support\Facades\Route;
 // #### Overview ####
 Route::get('/', [App\Http\Controllers\OverviewController::class, 'index'])->name('home');
 
-// Login
+// Login & logout
 Route::get('/login', [App\Http\Controllers\LoginController::class, 'index'])->name('index-login');
 Route::get('/login/user', [App\Http\Controllers\LoginController::class, 'login'])->name('login');
 Route::get('/logout', [App\Http\Controllers\LoginController::class, 'logout'])->name('logout');
+Route::get('/forgot-pw', [App\Http\Controllers\RegisterController::class, 'index'])->name('forgot-pw');
+
+// Register
 Route::get('/register', [App\Http\Controllers\RegisterController::class, 'index'])->name('register');
+Route::post('/register/new/user', [App\Http\Controllers\RegisterController::class, 'store'])->name('sign-up');
 
 Route::middleware('hasRole:mom,dad,uncle')->get('/area/member', function() {
     return view('home');
