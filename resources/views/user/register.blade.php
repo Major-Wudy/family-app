@@ -12,7 +12,7 @@
                 <x-icon type="register" :size="64"/>
             </div>
             <div class="col">
-                <div class="row g-3">
+                <div class="row g-4">
                     <div class="col-lg-2">
                         <div class="form-floating">
                             <input id="username" name="username" class="form-control" type="text" value="{{ old('username') }}" placeholder="@lang('register.placeholder-user')">
@@ -34,10 +34,17 @@
                             </div>
                         </div>
                     </div>
+                    {{-- //TODO Convert into select with options read from DB --}}
                     <div class="col-lg-3">
                         <div class="form-floating">
                             <input id="role" name="role" class="form-control" type="text" value="" placeholder="@lang('register.placeholder-role')">
                             <label for="role">@lang('register.placeholder-role'):</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-floating">
+                            <input id="email" name="email" class="form-control" type="email" value="{{ old('email') }}" placeholder="@lang('register.placeholder-email')">
+                            <label for="email">@lang('register.placeholder-email'):</label>
                         </div>
                     </div>
                 </div>
