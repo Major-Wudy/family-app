@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('username');
             $table->string('email');
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->text('password');
             $table->integer('reset_password')->nullable();
             $table->string('token')->nullable();
             $table->integer('remember_token')->nullable();

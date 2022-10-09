@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RegisterRequest;
+use App\Http\Services\EncryptionService;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class RegisterController extends Controller
@@ -32,9 +35,16 @@ class RegisterController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RegisterRequest $request)
     {
-        //
+        $request->validated();
+        $values = $request->all();
+        if((new User)->register($values)) {
+            return redirect()->route('member-area');
+        } else {
+            return back()->with('error', __('register.failed'));
+        }
+
     }
 
     /**
