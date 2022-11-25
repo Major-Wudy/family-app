@@ -42,7 +42,7 @@ class User extends Model
                 'forename' => $values['forename'], 
                 'surname' => $values['surname'], 
                 'email' => $values['email'], 
-                'password' => (new EncryptionService)->encrypt($values['forename']),
+                'password' => (new EncryptionService)->encrypt($values['password']),
             ]);
             
             $user->save();
@@ -54,7 +54,7 @@ class User extends Model
 
             $role->save();
 
-            Session::put($id->username);
+            Session::put('username', $id->username);
             return true;
         } catch (Throwable $e) {
             Log::error($e);

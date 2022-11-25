@@ -22,8 +22,9 @@ class UserHasRole
             $user = User::where('username', Session::get('username'))->with('roles')->first();
             foreach($user->roles as $user_role)  {
                 foreach($needed_roles as $role) {
-                    if($user_role->role == $role) {
+                    if(strtoupper($user_role->role) == strtoupper($role)) {
                         return $next($request);
+                        
                     } 
                 }
             }

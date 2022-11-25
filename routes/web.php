@@ -26,7 +26,7 @@ Route::get('/forgot-pw', [App\Http\Controllers\RegisterController::class, 'index
 Route::get('/register', [App\Http\Controllers\RegisterController::class, 'index'])->name('register');
 Route::post('/register/new/user', [App\Http\Controllers\RegisterController::class, 'store'])->name('sign-up');
 
-Route::middleware('hasRole:mom,dad,uncle')->get('/area/member', function() {
+Route::middleware('hasRole:dad,mom,uncle')->get('/area/member', function() {
     return view('home');
 })->name('member-area');
 Route::middleware('hasRole:admin')->get('/area/admin', function() {
